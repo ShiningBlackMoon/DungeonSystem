@@ -28,6 +28,9 @@ public class Main {
         for (Voxel2D[] coordinate : coordinates) {
             System.out.println(Arrays.toString(coordinate));
         }
+        System.out.println(array.getBossRoom());
+        System.out.println(array.getBossRoomX());
+        System.out.println(array.getBossRoomY());
     }
 
 }
