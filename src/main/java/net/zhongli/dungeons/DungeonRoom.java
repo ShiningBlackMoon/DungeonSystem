@@ -86,6 +86,6 @@ public class DungeonRoom {
                 " id='" + getId() + "'" +
                 ", doorSides='[" + getDoorSides()[0] + ", " + getDoorSides()[1] + ", " + getDoorSides()[2] + ", " + getDoorSides()[3] + "]'" +
                 ", roomWeight='" + getRoomWeight() + "'" +
-                "}";
+                " }";
     }
 }

@@ -6,10 +6,40 @@ public class DungeonRoomArray {
 
     private DungeonRoom[][] rooms;
     private DungeonRoomGenerator generator;
+    private DungeonRoom bossRoom;
+    private int bossRoomX, bossRoomY;
 
     public DungeonRoomArray(int width, int height) {
         this.rooms = new DungeonRoom[width][height];
         this.generator = new DungeonRoomGenerator(this);
+
+        // For dungeons to run properly, they need to have a boss room of some description (probably)
+        pickBossRoom();
+    }
+
+    //Pick a random room in the array, if it is not the middle room - assign it as the boss room.
+    public void pickBossRoom() {
+        int x = (int) (Math.random() * this.getWidth());
+        int y = (int) (Math.random() * this.getHeight());
+        if (x != this.getWidth() / 2 || y != this.getHeight() / 2) {
+            this.bossRoom = this.get(x, y);
+            this.bossRoomX = x;
+            this.bossRoomY = y;
+        } else {
+            this.pickBossRoom();
+        }
+    }
+
+    public DungeonRoom getBossRoom() {
+        return this.bossRoom;
+    }
+
+    public int getBossRoomX() {
+        return this.bossRoomX;
+    }
+
+    public int getBossRoomY() {
+        return this.bossRoomY;
     }
 
     public DungeonRoom[][] getRooms() {
