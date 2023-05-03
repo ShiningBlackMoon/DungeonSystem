@@ -1,0 +1,7 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <groupId>net.zhongli.dungeons</groupId>
+  <artifactId>Main</artifactId>
+  <version>2d-dungeontest-1.0.0.0</version>
+</project>	
